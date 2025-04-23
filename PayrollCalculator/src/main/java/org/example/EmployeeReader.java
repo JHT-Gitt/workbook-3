@@ -13,7 +13,7 @@ public class EmployeeReader {
             buffRead.readLine();
             String line;
             while((line = buffRead.readLine()) != null){
-                String[] token = line.split("|");
+                String[] token = line.split("\\|");
                 if(token.length == 4){
                     int id = Integer.parseInt(token[0]);
                     String name = token[1];
@@ -23,6 +23,7 @@ public class EmployeeReader {
                     Employee employ = new Employee(id,name,hoursW,rate);
 
                     employees.add(employ);
+
                 }
             }
             buffRead.close();

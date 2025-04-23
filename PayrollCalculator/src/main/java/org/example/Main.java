@@ -15,9 +15,9 @@ public class Main {
 
     for(Employee e : employees){
 
-        System.out.printf("Employee ID: %d", e.getEmployeeID());
-        System.out.printf("Employee Name: %s", e.getName());
-       // System.out.println("Employee Gross Pay: %.2f", e.getGrossPay());
+        System.out.printf("\n\nEmployee ID: %d", e.getEmployeeID());
+        System.out.printf("\nEmployee Name: %s", e.getName());
+        System.out.printf("\nEmployee Gross Pay: %.2f", e.getGrossPay());
 
     }
 
