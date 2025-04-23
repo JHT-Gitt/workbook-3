@@ -6,6 +6,8 @@ import java.io.*;
 public class EmployeeReader {
 
     public static List<Employee> showEmployee(String fileName) {
+
+
         List<Employee> employees = new ArrayList<>();
         try {
            BufferedReader buffRead = new BufferedReader(new FileReader(fileName));
@@ -28,7 +30,7 @@ public class EmployeeReader {
             }
             buffRead.close();
         } catch (IOException e) {
-            System.out.println("\nError ! Something went wrong.");
+            System.out.println("\nError ! File is not found.");
         }
 
        return employees;
