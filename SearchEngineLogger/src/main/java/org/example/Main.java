@@ -1,5 +1,4 @@
 package org.example;
-import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -26,8 +25,8 @@ public class Main {
 
             while(!isExited){
                 System.out.print("Enter a search term (X to exit):");
-                String search = scanner.nextLine().toLowerCase();
-                if(search.equals("x")){
+                String search = scanner.nextLine();
+                if(search.equalsIgnoreCase("x")){
                     writer.write(getDate + " exit");
                     isExited = true;
                 }else{
