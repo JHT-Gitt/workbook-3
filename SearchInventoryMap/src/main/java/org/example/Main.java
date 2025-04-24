@@ -33,6 +33,7 @@ while(!isAgain) {
         }
     } catch (InputMismatchException e) {
         System.out.println("\nInvalid Input");
+        isSearch = false;
     }
 
     while(!isSearch) {
