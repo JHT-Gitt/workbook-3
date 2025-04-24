@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Main {
     public static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) throws IOException {
@@ -21,6 +23,7 @@ public class Main {
         input = scanner.nextLine();
         List<Employee> employees = EmployeeReader.showEmployee(input);
         List<Employee> grossPayEmployee = new ArrayList<>();
+
 //    for(Employee e : employees){
 //
 //        System.out.printf("Employee ID: %d", e.getEmployeeID());
@@ -37,11 +40,13 @@ public class Main {
 
             grossPayEmployee.add(employeeGrossPay);
         }
+
         try {
             System.out.print("Enter the name of the payroll file to create(.csv): ");
-        inputTxt = scanner.nextLine();
-        FileWriter fileWriter = new FileWriter(inputTxt);
-        BufferedWriter bufWriter = new BufferedWriter(fileWriter);
+            inputTxt = scanner.nextLine();
+            FileWriter fileWriter = new FileWriter(inputTxt);
+            BufferedWriter bufWriter = new BufferedWriter(fileWriter);
+
 
         for(Employee ee : grossPayEmployee){
             text = String.format("%s|%s|%s\n", ee.getEmployeeID(),ee.getName(),ee.getGrossPayment());

@@ -31,6 +31,7 @@ public class EmployeeReader {
             buffRead.close();
         } catch (IOException e) {
             System.out.println("\nError ! File is not found.");
+            System.exit(0);
         }
 
        return employees;
