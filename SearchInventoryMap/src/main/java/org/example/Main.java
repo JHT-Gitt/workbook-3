@@ -21,11 +21,9 @@ while(!isAgain) {
         System.out.print("\nEnter the product ID: ");
         int id = scanner.nextInt();
 
-
         Product matchedProduct = inventory.get(id);
         if (matchedProduct == null) {
-            System.out.println("\nID not found");
-
+            System.out.println("\nProduct ID not found");
         }else{
             System.out.printf("\nWe carry %s and the price is $%.2f\n",
                     matchedProduct.getName(), matchedProduct.getPrice());
@@ -35,7 +33,6 @@ while(!isAgain) {
         System.out.println("\nInvalid Input");
         isSearch = false;
     }
-
     while(!isSearch) {
         scanner.nextLine();
         System.out.print("\nDo you want to search again ? [y/n]: ");
@@ -48,7 +45,6 @@ while(!isAgain) {
             isSearch = true;
             }
     }
-
 }
     }
     public static void loadInventory(){
@@ -64,7 +60,6 @@ while(!isAgain) {
                     float price = Float.parseFloat(token[2]);
 
                     inventory.put(id, new Product(id,name,price));
-
                 }
             }
         }catch (InputMismatchException e) {
@@ -73,8 +68,5 @@ while(!isAgain) {
         catch (IOException e) {
             System.out.println("\nError ! File is not found.");
         }
-
     }
-
-
 }
