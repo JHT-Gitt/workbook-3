@@ -91,10 +91,11 @@ public static Scanner scanner = new Scanner(System.in);
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
             for(Product product : inventory){
                 writer.write(String.format("%d|%s|%.2f",product.getId(),product.getName(),product.getPrice()));
-               // writer.newLine();
+                writer.newLine();
             }
             System.out.println("\nProduct is added");
 
+            writer.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
 
