@@ -13,7 +13,7 @@ public class Main {
         ArrayList<Product> inventory = ShowInventory.getInventory(file);
 
         ShowInventory.menu();
-        
+
 //        System.out.println("We carry the following inventory: ");
 //
 //        for (int i = 0; i < inventory.size(); i++) {
