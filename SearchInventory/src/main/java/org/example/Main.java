@@ -10,39 +10,44 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         String file = "inventory.csv";
-        ArrayList<Product> inventory = getInventory(file);
+        ArrayList<Product> inventory = ShowInventory.getInventory(file);
 
-        System.out.println("We carry the following inventory: ");
+        ShowInventory.menu();
 
-        for (int i = 0; i < inventory.size(); i++) {
-            Product p = inventory.get(i);
-            inventory.sort(Comparator.comparing(Product::getName));
-            System.out.printf("id: %d - Name: %s - Price: $%.2f\n",
-                    p.getId(), p.getName(), p.getPrice());
-        }
+
+//        System.out.println("We carry the following inventory: ");
+//
+//        for (int i = 0; i < inventory.size(); i++) {
+//            Product p = inventory.get(i);
+//            inventory.sort(Comparator.comparing(Product::getName));
+//            System.out.printf("id: %d - Name: %s - Price: $%.2f\n",
+//                    p.getId(), p.getName(), p.getPrice());
+//        }
     }
-    public static ArrayList<Product> getInventory(String file) {
-        ArrayList<Product> inventory = new ArrayList<>();
-        try{
-            BufferedReader buff = new BufferedReader(new FileReader(file));
+//    public static ArrayList<Product> getInventory(String file) {
+//        ArrayList<Product> inventory = new ArrayList<>();
+//        try{
+//            BufferedReader buff = new BufferedReader(new FileReader(file));
+//
+//            String line;
+//            while((line = buff.readLine()) != null){
+//                String[] token = line.split("\\|");
+//                if(token.length ==3){
+//                    int id = Integer.parseInt(token[0]);
+//                    String name = token[1];
+//                    float price = Float.parseFloat(token[2]);
+//
+//                    Product pro = new Product(id,name,price);
+//                    inventory.add(pro);
+//                }
+//            }
+//            buff.close();
+//        }catch (IOException e) {
+//            System.out.println("\nError ! File is not found.");
+//        }
+//        return inventory;
+//    }
 
-            String line;
-            while((line = buff.readLine()) != null){
-                String[] token = line.split("\\|");
-                if(token.length ==3){
-                    int id = Integer.parseInt(token[0]);
-                    String name = token[1];
-                    float price = Float.parseFloat(token[2]);
 
-                    Product pro = new Product(id,name,price);
-                    inventory.add(pro);
-                }
-            }
-            buff.close();
-        }catch (IOException e) {
-            System.out.println("\nError ! File is not found.");
-        }
-        return inventory;
-    }
 
 }
